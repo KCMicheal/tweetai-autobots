@@ -16,6 +16,8 @@ const Autobot = sequelize.define('Autobot', {
         allowNull: false,
         unique: true
     }
+}, {
+    timestamps: false  // Disable createdAt and updatedAt
 });
 
 module.exports = Autobot;

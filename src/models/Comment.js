@@ -23,6 +23,8 @@ const Comment = sequelize.define('Comment', {
         type: DataTypes.TEXT,
         allowNull: false
     }
+}, {
+    timestamps: false  // Disable createdAt and updatedAt
 });
 
 Post.hasMany(Comment, { foreignKey: 'postId', onDelete: 'CASCADE' });

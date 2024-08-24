@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('tweetai', 'tweetai_user', process.env.MYSQL_PASSWORD, {
+const sequelize = new Sequelize('tweetai', 'tweetai_user', 'Admin123', {
     host: 'localhost',
     dialect: 'mysql',
     port: 3306,

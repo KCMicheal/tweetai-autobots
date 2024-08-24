@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const rateLimit = require('express-rate-limit');
 const sequelize = require('./config/dbConnection');
 const createAutobots = require('./autobotProd');
@@ -17,10 +18,10 @@ app.use(limiter);
 
 
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
+// const port = process.env.PORT || 3000;
+// app.listen(port, () => {
+//     console.log(`Server running on port ${port}`);
+// });
 
 
 //GET AUTO BOTS
@@ -50,6 +51,7 @@ sequelize.sync()
         app.listen(port, () => {
             console.log(`Server running on port ${port}`);
         });
+        createAutobots();
     })
     .catch(err => {
         console.error('Unable to sync the database:', err);

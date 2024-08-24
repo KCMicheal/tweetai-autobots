@@ -20,6 +20,8 @@ const Post = sequelize.define('Post', {
         type: DataTypes.TEXT,
         allowNull: false
     }
+}, {
+    timestamps: false  // Disable createdAt and updatedAt
 });
 
 Autobot.hasMany(Post, { foreignKey: 'autbotId', onDelete: 'CASCADE' });
